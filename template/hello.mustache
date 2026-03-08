@@ -1,10 +1,16 @@
 <html>
 <body>
-{{ #person }}
-Hello Person {{ name }}!
-{{ /person }}
-{{ ^person }}
-Hello Guest
-{{ /person }}
+{! {{ #person }}
+{! Hello Person {{ name }}!
+{! {{ /person }}
+{! {{ ^person }}
+{! Hello Guest
+{! {{ /person }}
+<<h1>Hobbies</h1>
+<ul>
+{{ #hobbies }}
+    <li>{{.}}</li>
+{{ /hobbies }}
+</ul>
 </body>
 </html>
