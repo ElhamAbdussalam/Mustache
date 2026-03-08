@@ -1,4 +1,5 @@
 import Mustache from "mustache";
+import fs from "fs/promises";
 
 test("Tags", () => {
   const data = Mustache.render("Hello, {{name}}, my hobby is {{{hobby}}}", {
@@ -15,4 +16,15 @@ test("Nested Object", () => {
     },
   });
   expect(data).toBe("Hello, Elham");
+});
+
+test("Mustache File", async () => {
+  const helloTemplate = await fs
+    .readFile("./template/hello.mustache")
+    .then((data) => data.toString());
+
+  const data = Mustache.render(helloTemplate, { title: "Elham" });
+
+  console.info(data);
+  expect(data).toContain("Elham");
 });
