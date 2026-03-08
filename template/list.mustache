@@ -1,0 +1,19 @@
+<html>
+  <body>
+    <h1>Hobbies</h1>
+    <ul>
+      {{ #hobbies }}
+      <li>{{.}}</li>
+      {{ /hobbies }}
+      <h1>Students</h1>
+      <table>
+        {{ #students }}
+        <tr>
+          <td>{{ name }}</td>
+          <td>{{ value }}</td>
+        </tr>
+        {{ /students }}
+      </table>
+    </ul>
+  </body>
+</html>
